@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8da9418a6bf493e93ef4c7b7575847, type: 3}
+  m_Name: TemplateSkeleton
+  m_EditorClassIdentifier: 
+  m_SpriteBones:
+  - m_Name: Hip
+    m_Guid: 634c722e6fd1e4d20a47ebaafa76e184
+    m_Position: {x: 48, y: 30, z: 1}
+    m_Rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+    m_Length: 6.085152
+    m_ParentId: -1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278190335
+  - m_Name: Torso
+    m_Guid: 15550ec96ac5e46339578d94079dc714
+    m_Position: {x: 5.9999995, y: -0.0000023841849, z: 1}
+    m_Rotation: {x: 0, y: 0, z: -0, w: 1}
+    m_Length: 9.598636
+    m_ParentId: 0
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255615
+  - m_Name: Neck_1
+    m_Guid: dc93056aaa20844629204ab61f343e7d
+    m_Position: {x: 9.275871, y: -0.000003457068, z: 1}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+    m_Length: 2.6486127
+    m_ParentId: 1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255360
+  - m_Name: BHand1
+    m_Guid: f2deda5022b4747b09a012a90b12bfff
+    m_Position: {x: 7.499996, y: -5.7296166, z: -3}
+    m_Rotation: {x: 0, y: 0, z: -0.70710677, w: 0.7071068}
+    m_Length: 10.262012
+    m_ParentId: 1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294967040
+  - m_Name: BHand2
+    m_Guid: 863aec7bd29424d289129b46126c06b5
+    m_Position: {x: 10.2620125, y: 0.0000038146973, z: -3}
+    m_Rotation: {x: 0, y: 0, z: -0.0011053936, w: 0.9999994}
+    m_Length: 9.032328
+    m_ParentId: 3
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294901760
+  - m_Name: AHand1
+    m_Guid: d6e59de2814c5498bb1c0bdcbcbeac51
+    m_Position: {x: 7.49999, y: 5.9999847, z: 3}
+    m_Rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+    m_Length: 10.186734
+    m_ParentId: 1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294902015
+  - m_Name: AHand2
+    m_Guid: e31651cfd290549768ba35baf90f0c58
+    m_Position: {x: 10.186735, y: -0.0000038146973, z: 3}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+    m_Length: 9.009256
+    m_ParentId: 5
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278223103
+  - m_Name: ALeg1
+    m_Guid: bb82b43a9836a42979532eb8509103da
+    m_Position: {x: 2.0000005, y: 3.9999976, z: 2}
+    m_Rotation: {x: 0, y: -0, z: 0.99999684, w: 0.002519442}
+    m_Length: 14.961434
+    m_ParentId: 0
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255488
+  - m_Name: ALeg2
+    m_Guid: 3fb1ca99670494d88aac7ffa9e0447d3
+    m_Position: {x: 14.999809, y: 0.07558441, z: 2}
+    m_Rotation: {x: 0, y: 0, z: 0.002519442, w: 0.99999684}
+    m_Length: 16.960224
+    m_ParentId: 7
+    m_Color:
+      serializedVersion: 2
+      rgba: 4286643968
+  - m_Name: BLeg1
+    m_Guid: 5bb02853b71d5465fa0e34d16f16df52
+    m_Position: {x: 1.9999995, y: -4.0000014, z: -2}
+    m_Rotation: {x: 0, y: -0, z: 1, w: -0.00000004371139}
+    m_Length: 14.999998
+    m_ParentId: 0
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294934528
+  - m_Name: BLeg2
+    m_Guid: a579690f2fc0248f18930f0035e1a409
+    m_Position: {x: 14.999998, y: -0.0000038146973, z: -2}
+    m_Rotation: {x: 0, y: 0, z: -0.00000004371139, w: 1}
+    m_Length: 16.97381
+    m_ParentId: 9
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294901888
+  - m_Name: AHand3
+    m_Guid: 3c4460a0d9a514f0a8835a4525a14c14
+    m_Position: {x: 9.009256, y: 0, z: 3}
+    m_Rotation: {x: 0, y: 0, z: 0.00000011920926, w: 1}
+    m_Length: 1.5820206
+    m_ParentId: 6
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255360
+  - m_Name: HeadTop
+    m_Guid: 2b342498020044f38b318dc70076d4b8
+    m_Position: {x: 15.080284, y: -0.00034332275, z: 1}
+    m_Rotation: {x: 0, y: 0, z: -0.70637715, w: 0.7078357}
+    m_Length: 1.169285
+    m_ParentId: 13
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294967295
+  - m_Name: Head
+    m_Guid: d7282b1980b184aaca2726d2ceed5a18
+    m_Position: {x: 2.6486168, y: 0.0000038146973, z: 3}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+    m_Length: 15.08029
+    m_ParentId: 2
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278190335
+  - m_Name: BHand3
+    m_Guid: f833837eea80344df92af5c6da73b4fa
+    m_Position: {x: 9.03233, y: 0, z: 3}
+    m_Rotation: {x: 0, y: 0, z: 0.0011056022, w: 0.9999994}
+    m_Length: 1.8374957
+    m_ParentId: 4
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255488
+  - m_Name: ALeg3
+    m_Guid: bc885a8954fa142faa26f7a191564273
+    m_Position: {x: 17.038021, y: -0.17591095, z: 3}
+    m_Rotation: {x: -0, y: 0, z: -0.6947244, w: -0.719276}
+    m_Length: 1.6608305
+    m_ParentId: 8
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294902015
+  - m_Name: BLeg3
+    m_Guid: 0f02bca07cb274ba685347fa7d32ee2f
+    m_Position: {x: 17.054033, y: -0.057048798, z: 1}
+    m_Rotation: {x: 0, y: 0, z: -0.7059221, w: -0.7082895}
+    m_Length: 2.332506
+    m_ParentId: 10
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278190335
