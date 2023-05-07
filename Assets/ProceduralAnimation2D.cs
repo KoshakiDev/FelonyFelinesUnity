@@ -76,23 +76,23 @@ public class ProceduralAnimation2D : MonoBehaviour
     public float IdleHipAngleDegrees = 5;
 
     [Tooltip("How big in pixels the crouch should be")]
-    public int CrouchSize = 3;
+    public int CrouchSize = 1;
 
 
 
     [Header("Walking/Running Settings")]
 
     [Tooltip("How far in pixels the leaning should be")]
-    public int LeanSize = 5;
+    public int LeanSize = 3;
 
     [Tooltip("The angle to lean the hips at")]
     public float LeanHipAngleDegrees = 5;
 
     [Tooltip("How high in pixels the bobbing should be")]
-    public int BobSize = 3;
+    public int BobSize = 1;
 
     [Tooltip("How big in pixels the step would be")]
-    public int GaitSize = 5;
+    public int GaitSize = 10;
 
     [Tooltip("The scale of the circular motion of legs")]
     public Vector2 LegScale = new Vector2(1f, 1f);
@@ -184,7 +184,14 @@ public class ProceduralAnimation2D : MonoBehaviour
 
         if (_characterHandleWeapon.CurrentWeapon == null)
         {
+            is_left_arm_ik_enabled = false;
+            is_right_arm_ik_enabled = false;
             return;
+        }
+        else
+        {
+            is_left_arm_ik_enabled = true;
+            is_right_arm_ik_enabled = true;
         }
 
 
@@ -196,12 +203,12 @@ public class ProceduralAnimation2D : MonoBehaviour
 
         //if the IK is active, set the position and rotation directly to the goal. 
 
-        if (is_left_arm_ik_enabled && LeftHandHandle != null)
+        if (LeftHandHandle != null)
         {
             LeftArmTarget.position = LeftHandHandle.position;
         }
 
-        if (is_right_arm_ik_enabled && RightHandHandle != null)
+        if (RightHandHandle != null)
         {
             RightArmTarget.position = RightHandHandle.position;
         }
@@ -259,8 +266,7 @@ public class ProceduralAnimation2D : MonoBehaviour
         
         TravelSpeed = _topDownController2D.CurrentMovement.magnitude;
 
-        LeanHip(LeanHipAngleDegrees);
-
+        
         if (
             (_topDownController2D.CurrentMovement.x < 0 && _characterOrientation2D.IsFacingRight) ||
             (_topDownController2D.CurrentMovement.x > 0 && !_characterOrientation2D.IsFacingRight)
@@ -268,6 +274,8 @@ public class ProceduralAnimation2D : MonoBehaviour
         {
             TravelSpeed *= -1;
         }
+
+        LeanHip(LeanHipAngleDegrees);
 
 
         movementAngleUpdate = (movementAngleUpdate + TravelSpeed) % 360f;
@@ -311,7 +319,7 @@ public class ProceduralAnimation2D : MonoBehaviour
     {
         Quaternion new_rotation = Quaternion.Euler(0, 0, InitialHipRotation);
 
-        new_rotation = Quaternion.Euler(0, 0, InitialHipRotation - passed_angle * Mathf.Sign(TravelSpeed));
+        new_rotation = Quaternion.Euler(0, 0, InitialHipRotation + passed_angle * Mathf.Sign(-TravelSpeed));
 
         HipTransform.localRotation = new_rotation;
 
@@ -458,12 +466,12 @@ public class ProceduralAnimation2D : MonoBehaviour
     }
     void SetInitialPositions()
     {
-        InitialRightArmTargetPosition = RightArmTarget.position;
-        InitialLeftArmTargetPosition = LeftArmTarget.position;
-        InitialRightLegTargetPosition = RightLegTarget.position;
-        InitialLeftLegTargetPosition = LeftLegTarget.position;
+        InitialRightArmTargetPosition = RightArmTarget.localPosition;
+        InitialLeftArmTargetPosition = LeftArmTarget.localPosition;
+        InitialRightLegTargetPosition = RightLegTarget.localPosition;
+        InitialLeftLegTargetPosition = LeftLegTarget.localPosition;
         InitialTorsoPosition = TorsoTransform.localPosition;
         InitialHipPosition = HipTransform.localPosition;
-        InitialPostureTargetPosition = PostureTarget.position;
+        InitialPostureTargetPosition = PostureTarget.localPosition;
     }
 }

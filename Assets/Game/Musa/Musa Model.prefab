@@ -1923,15 +1923,16 @@ MonoBehaviour:
   TorsoTransform: {fileID: 7231020305503957253}
   PostureTarget: {fileID: 8111609595380433555}
   breathingSpeed: 1
-  LeanSize: 5
-  LeanHipAngleDegrees: 5
+  IdleHipAngleDegrees: -5
+  CrouchSize: 1
+  LeanSize: 10
+  LeanHipAngleDegrees: 15
   BobSize: 3
-  CrouchSize: 3
-  GaitSize: 5
+  GaitSize: 16
   LegScale: {x: 1, y: 1}
-  ArmScale: {x: 1, y: 1}
-  armSwingAngle: 30
-  TravelSpeed: 1
+  ArmScale: {x: 1, y: 0.75}
+  armSwingAngleDegrees: 90
+  TravelSpeed: 0
 --- !u!4 &6582546813780594514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8106644094940365920, guid: a804b63ad6b074a6d8fbe0f8d53560c1,
