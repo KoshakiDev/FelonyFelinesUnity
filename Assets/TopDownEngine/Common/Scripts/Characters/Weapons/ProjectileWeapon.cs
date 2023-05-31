@@ -145,10 +145,23 @@ namespace MoreMountains.TopDownEngine
 			if (_projectileSpawnTransform != null)
 			{
 				nextGameObject.transform.position = _projectileSpawnTransform.position;
-			}
-			// we set its direction
+               
+            }
+            #region Correcting bullet spawn position
+            if (Owner != null)
+            {
+                BoxCollider2D boxCollider2D = nextGameObject.GetComponent<BoxCollider2D>();
+                //boxCollider2D = ;
+                Debug.Log("offset " + boxCollider2D.offset);
 
-			Projectile projectile = nextGameObject.GetComponent<Projectile>();
+
+                boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, -Owner.transform.position.y);
+            }
+
+            #endregion
+            // we set its direction
+
+            Projectile projectile = nextGameObject.GetComponent<Projectile>();
 			if (projectile != null)
 			{
 				projectile.SetWeapon(this);
@@ -196,6 +209,7 @@ namespace MoreMountains.TopDownEngine
 					}
 					else // if we're in 2D
 					{
+						//Debug.Log(Owner);
 						Vector3 newDirection = (spread * transform.right) * (Flipped ? -1 : 1);
 						if (Owner.Orientation2D != null)
 						{
@@ -205,8 +219,11 @@ namespace MoreMountains.TopDownEngine
 						{
 							projectile.SetDirection(newDirection, spread * transform.rotation, true);
 						}
-					}
-				}                
+
+                        
+
+                    }
+                }                
 
 				if (RotateWeaponOnSpread)
 				{
