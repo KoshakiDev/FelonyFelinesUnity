@@ -6,20 +6,18 @@ using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using Random = UnityEngine.Random;
 
-namespace MoreMountains.TopDownEngine
+namespace JonGearCustomScript
 {
     public class BulletYPosition : MonoBehaviour
     {
-        // Start is called before the first frame update
-        public GameObject model;
-
         public void SetYPosition(float new_y)
         {
-            if (model == null)
+            foreach (Transform visual in transform)
             {
-                return;
+                if (visual.name == "DEBUG")
+                    return;
+                visual.transform.position = transform.position + new Vector3(0, new_y, 0);
             }
-            model.transform.position = new Vector2(model.transform.position.x, new_y);
         }
     }
 }

@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using Random = UnityEngine.Random;
+using JonGearCustomScript;
+
 
 namespace MoreMountains.TopDownEngine
 {
@@ -141,24 +143,25 @@ namespace MoreMountains.TopDownEngine
 				throw new Exception(gameObject.name + " is trying to spawn objects that don't have a PoolableObject component.");
 			}
 			// we position the object
+
+
+
 			nextGameObject.transform.position = spawnPosition;
-			if (_projectileSpawnTransform != null)
+
+			#region Correcting the position to spawn at feet
+			if (Owner != null)
+			{
+				nextGameObject.transform.position = new Vector2(nextGameObject.transform.position.x, Owner.transform.position.y);
+			}
+			#endregion
+
+
+            if (_projectileSpawnTransform != null)
 			{
 				nextGameObject.transform.position = _projectileSpawnTransform.position;
-               
-            }
-            #region Correcting bullet spawn position
-            if (Owner != null)
-            {
-                BoxCollider2D boxCollider2D = nextGameObject.GetComponent<BoxCollider2D>();
-                //boxCollider2D = ;
-                Debug.Log("offset " + boxCollider2D.offset);
+			}
 
 
-                boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, -Owner.transform.position.y);
-            }
-
-            #endregion
             // we set its direction
 
             Projectile projectile = nextGameObject.GetComponent<Projectile>();
@@ -170,10 +173,14 @@ namespace MoreMountains.TopDownEngine
 					projectile.SetOwner(Owner.gameObject);
 				}
 			}
-			// we activate the object
-			nextGameObject.gameObject.SetActive(true);
 
-			if (projectile != null)
+
+            
+
+            // we activate the object
+            nextGameObject.gameObject.SetActive(true);
+
+            if (projectile != null)
 			{
 				if (RandomSpread)
 				{
@@ -220,6 +227,9 @@ namespace MoreMountains.TopDownEngine
 							projectile.SetDirection(newDirection, spread * transform.rotation, true);
 						}
 
+
+
+
                         
 
                     }
@@ -229,9 +239,21 @@ namespace MoreMountains.TopDownEngine
 				{
 					this.transform.rotation = this.transform.rotation * spread;
 				}
-			}
 
-			if (triggerObjectActivation)
+            }
+
+            #region Correcting bullet visual
+
+            if (Owner != null)
+            {
+                nextGameObject.GetComponent<BulletYPosition>()?.SetYPosition(-(Owner.transform.position - spawnPosition).y);
+            }
+            
+            #endregion
+
+
+
+            if (triggerObjectActivation)
 			{
 				if (nextGameObject.GetComponent<MMPoolableObject>() != null)
 				{
