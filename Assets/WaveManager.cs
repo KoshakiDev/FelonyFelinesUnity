@@ -8,9 +8,12 @@ public class WaveManager : MonoBehaviour
     public GameObject enemySpawners;
 
 
+    List<GameObject> currentEnemies = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
+        List<GameObject> currentEnemies = new List<GameObject>();
         UpdateWave();
     }
 
@@ -18,14 +21,32 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         
+        /*
+        You could technically take all of the newly spawned enemies and parent them to an empty and just keep track of that empty's count
+        */
+        int enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        Debug.Log(enemiesLeft);
+
+        
+        if(enemiesLeft == 0)
+        {
+            Debug.Log("new enemies spawned");
+            UpdateWave();
+        }
+        
     }
 
     void UpdateWave()
     {
         foreach (EnemySpawner enemySpawner in enemySpawners.GetComponentsInChildren<EnemySpawner>())
         {
-            enemySpawner.SpawnEnemies(1);
+            enemySpawner.SpawnEnemies(1, this);
         }
+    }
+
+    public void AddEnemyToList(GameObject newEnemy)
+    {
+        currentEnemies.Add(newEnemy);
     }
     
 }

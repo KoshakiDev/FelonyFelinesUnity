@@ -17,32 +17,33 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        
 
     }
 
-    public void SpawnEnemies(int amount)
+    public void SpawnEnemies(int amount, WaveManager waveManager)
     {
         for (int i = 0; i < amount; i++)
         {
             int index = UnityEngine.Random.Range(0, ObjectsToInstantiate.Count);
-            spawnSingleEnemy(ObjectsToInstantiate[index]);
+            spawnSingleEnemy(ObjectsToInstantiate[index], waveManager);
+            
         }
     }
 
-    void spawnSingleEnemy(GameObject enemy)
+    void spawnSingleEnemy(GameObject enemy, WaveManager waveManager)
     {
 
         _gameObject = Instantiate(enemy);
-        Debug.Log(_gameObject);
-
         SceneManager.MoveGameObjectToScene(_gameObject, this.gameObject.scene);
         MoreMountains.Tools.MMSpawnAround.ApplySpawnAroundProperties(_gameObject, SpawnProperties, this.transform.position);
+
+        waveManager.AddEnemyToList(_gameObject);
     }
 }
 
