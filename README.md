@@ -1,6 +1,11 @@
-# Project Title
+# Felony Felines (in Unity)
 
-A brief description or introduction of your project. Highlight its purpose, main features, and any notable technologies or programming languages used.
+A brief description or introduction of your project. 
+
+
+Purpose: To practice using Unity
+Main features: 
+Notable technologies/programming languages:
 
 ## Table of Contents
 
