@@ -481,7 +481,8 @@ namespace MoreMountains.TopDownEngine
 					{				
 						if (!_walkParticlesPlaying && (system != null))
 						{
-							system.Play();		
+							system.Play();
+							
 						}
 						_walkParticlesPlaying = true;
 					}	
@@ -500,7 +501,7 @@ namespace MoreMountains.TopDownEngine
 			}
 			else
 			{
-				foreach (ParticleSystem system in WalkParticles)
+                foreach (ParticleSystem system in WalkParticles)
 				{						
 					if (_walkParticlesPlaying && (system != null))
 					{

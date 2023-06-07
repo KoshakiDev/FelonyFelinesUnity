@@ -10,6 +10,8 @@ public class ProceduralAnimation2D : MonoBehaviour
 
     public GameObject Parent = null;
 
+    public AnimationCurve yCurve;
+
     [Header("Arm Targets")]
     /// The transform to use as a target for the left hand
     [Tooltip("The transform to use as a target for the right arm")]
@@ -114,6 +116,9 @@ public class ProceduralAnimation2D : MonoBehaviour
 
     protected CharacterHandleWeapon _characterHandleWeapon;
 
+    protected Health _health;
+
+
 
     void Awake()
     {
@@ -135,12 +140,24 @@ public class ProceduralAnimation2D : MonoBehaviour
             _characterHandleWeapon = Parent.GetComponent<CharacterHandleWeapon>();
             _topDownController2D = Parent.GetComponent<TopDownController2D>();
             _characterOrientation2D = Parent.GetComponent<CharacterOrientation2D>();
+            _health = Parent.GetComponent<Health>();
+
+            _health.OnHit += SetHit;
         }
         else
         {
             Debug.LogError("Error: Parent not found for ProceduralAnimation2D");
         }
+
     }
+
+
+    // a callback for calculating IK, will be called by animator component when IK is on
+    void OnAnimatorIK()
+    {
+        Debug.Log("IK was turned on");
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -162,6 +179,8 @@ public class ProceduralAnimation2D : MonoBehaviour
         hip_delta_position += GetHipPosition(movementAngleUpdate);
 
 
+        UpdateHit();
+
         if (_topDownController2D.CurrentMovement.magnitude > 0)
         {
             Move();
@@ -174,6 +193,43 @@ public class ProceduralAnimation2D : MonoBehaviour
         UpdateBodyPositions();
     }
 
+    float hitUpdate = 0;
+
+    float hitTime = 1.0f * 60; //in seconds
+
+    void UpdateHit()
+    {
+        if (hitUpdate > 0)
+        {
+            Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
+            if (
+            (_health.LastDamageDirection.x < 0 && _characterOrientation2D.IsFacingRight) ||
+            (_health.LastDamageDirection.x > 0 && !_characterOrientation2D.IsFacingRight)
+            )
+            {
+                direction *= -1;
+            }
+
+
+
+            posture_delta_position += direction * 48 * PIXEL_UNITS * hitUpdate / hitTime;
+
+            hip_delta_position += direction * 16 * PIXEL_UNITS * hitUpdate / hitTime;
+
+            //left_leg_delta_position += direction * 8 * PIXEL_UNITS;
+
+            //right_leg_delta_position += -1 * direction * 8 * PIXEL_UNITS;
+
+
+
+            hitUpdate -= 1;
+        }
+    }
+
+    void SetHit()
+    {
+        hitUpdate = hitTime;
+    }
 
     void UpdateIKHands()
     {

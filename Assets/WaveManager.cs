@@ -25,12 +25,10 @@ public class WaveManager : MonoBehaviour
         You could technically take all of the newly spawned enemies and parent them to an empty and just keep track of that empty's count
         */
         int enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        Debug.Log(enemiesLeft);
-
+        
         
         if(enemiesLeft == 0)
         {
-            Debug.Log("new enemies spawned");
             UpdateWave();
         }
         

@@ -157,7 +157,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  Sfx: {fileID: 8300000, guid: d8ea448bae39d4146b98a9953a270f1b, type: 3}
+  Sfx: {fileID: 8300000, guid: 840e4b7f1a2b14bcea2f02eb7d5f0f30, type: 3}
   RandomSfx: []
   TestButton: 0
   TestStopButton: 0
@@ -165,8 +165,8 @@ MonoBehaviour:
   PoolSize: 10
   MinVolume: 1
   MaxVolume: 1
-  MinPitch: 1
-  MaxPitch: 1
+  MinPitch: 0.97
+  MaxPitch: 1.03
   SfxAudioMixerGroup: {fileID: 0}
   Priority: 128
 --- !u!114 &5388839786178429519
@@ -431,7 +431,7 @@ Transform:
   - {fileID: 8137159906126475077}
   - {fileID: 7822963742242987636}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8079473561631270373
 BoxCollider2D:

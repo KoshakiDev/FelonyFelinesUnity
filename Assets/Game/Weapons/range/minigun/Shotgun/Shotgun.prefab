@@ -5091,7 +5091,7 @@ MonoBehaviour:
   TriggerMode: 1
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 0
-  TimeBetweenUses: 0.5
+  TimeBetweenUses: 1.5
   TimeBetweenUsesReleaseInterruption: 1
   UseBurstMode: 0
   BurstLength: 2
@@ -20543,8 +20543,11 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  Sfx: {fileID: 8300000, guid: 592d080ffbf62d9469ec0da3a406bd08, type: 3}
-  RandomSfx: []
+  Sfx: {fileID: 0}
+  RandomSfx:
+  - {fileID: 8300000, guid: 198caa8685c1f4206b0404357d1a468c, type: 3}
+  - {fileID: 8300000, guid: 5ea0e8305ae4c4a41a045b5c09a43de6, type: 3}
+  - {fileID: 8300000, guid: c3d5911ddd65a4a57bf846c4c20cb9d9, type: 3}
   TestButton: 0
   TestStopButton: 0
   PlayMethod: 0

@@ -60,9 +60,9 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0.0015344181, w: 0.9999988}
     - {x: 0, y: 0, z: -0.70602095, w: -0.70819104}
     m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: -0, z: 1, w: -0.00000004371139}
+    - {x: 0, y: 0, z: 0.0015344181, w: 0.9999988}
+    - {x: 0, y: 0, z: -0.70602095, w: -0.70819104}
   m_Flip: 0
 --- !u!1 &2184742388176736818
 GameObject:
@@ -410,9 +410,9 @@ MonoBehaviour:
     - {x: 0, y: 0, z: -0.0011053936, w: 0.9999994}
     - {x: 0, y: 0, z: 0.001105334, w: 0.9999994}
     m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: -0.70710677, w: 0.7071068}
+    - {x: 0, y: 0, z: -0.0011053936, w: 0.9999994}
+    - {x: 0, y: 0, z: 0.001105334, w: 0.9999994}
   m_Flip: 1
 --- !u!1 &8245569917156143000
 GameObject:
@@ -512,10 +512,10 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0, w: 1}
     - {x: 0, y: 0, z: -0.70637715, w: 0.7078357}
     m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: -0, w: 1}
+    - {x: 0, y: 0, z: 0, w: 1}
+    - {x: 0, y: 0, z: 0, w: 1}
+    - {x: 0, y: 0, z: -0.70637715, w: 0.7078357}
   m_Iterations: 10
   m_Tolerance: 0.01
   m_Velocity: 0.1
@@ -579,9 +579,9 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0.0046129082, w: 0.9999894}
     - {x: 0, y: 0, z: 0.6967082, w: 0.71735466}
     m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: -0, z: 1, w: -0.00000004371139}
+    - {x: 0, y: 0, z: 0.0046129082, w: 0.9999894}
+    - {x: 0, y: 0, z: 0.6967082, w: 0.71735466}
   m_Flip: 0
 --- !u!1001 &6063689348946736370
 PrefabInstance:
@@ -1860,7 +1860,7 @@ Animator:
   m_GameObject: {fileID: 6035178135099839823}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7e6eac68b4ba34ec49f0f935c5f94de8, type: 2}
+  m_Controller: {fileID: 22100000, guid: a8b32b9b451bd42b3a68aaed9f061479, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1913,6 +1913,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  yCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.5032325
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
   RightArmTarget: {fileID: 5017015220834670595}
   is_right_arm_ik_enabled: 0
   LeftArmTarget: {fileID: 3101172445635133}

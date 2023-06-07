@@ -437,6 +437,7 @@ namespace MoreMountains.TopDownEngine
 
 			LastDamage = damage;
 			LastDamageDirection = damageDirection;
+
 			if (OnHit != null)
 			{
 				OnHit();

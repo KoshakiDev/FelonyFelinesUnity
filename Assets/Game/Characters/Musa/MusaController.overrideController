@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MusaController
+  m_Controller: {fileID: 9100000, guid: 34de0e2d4c64b4cdfa9b937615dd610c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 656176b310aa944a4b61880e666525a4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 81bbfa48b55934bc6beae3aac2ee6362, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cb36dda28c4e64fb3b637f57f9e11068, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b95c8a85a0d0444c5affd85c82944ca4, type: 2}

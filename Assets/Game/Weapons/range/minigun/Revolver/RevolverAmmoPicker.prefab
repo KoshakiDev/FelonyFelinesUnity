@@ -35,7 +35,7 @@ Transform:
   - {fileID: 1046467622627176120}
   - {fileID: 6942150821300505404}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1030680756302830298
 BoxCollider2D:
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fd837a0abc28d4d91c55590bd2c090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: d6109f856c173499c904d4e1eb2ef6d2, type: 2}
+  Item: {fileID: 11400000, guid: a16c7701da7194648b3dfe32b73e6da5, type: 2}
   Quantity: 50
   RemainingQuantity: 1
   PickableIfInventoryIsFull: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  Sfx: {fileID: 8300000, guid: d8ea448bae39d4146b98a9953a270f1b, type: 3}
+  Sfx: {fileID: 8300000, guid: 840e4b7f1a2b14bcea2f02eb7d5f0f30, type: 3}
   RandomSfx: []
   TestButton: 0
   TestStopButton: 0
@@ -508,8 +508,8 @@ MonoBehaviour:
   PoolSize: 10
   MinVolume: 1
   MaxVolume: 1
-  MinPitch: 1
-  MaxPitch: 1
+  MinPitch: 0.97
+  MaxPitch: 1.03
   SfxAudioMixerGroup: {fileID: 0}
   Priority: 128
 --- !u!114 &1766900784445738810
