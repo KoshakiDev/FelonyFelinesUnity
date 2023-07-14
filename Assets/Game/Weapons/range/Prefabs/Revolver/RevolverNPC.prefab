@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2682296804644205277
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1490220044263310, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_Name
+      value: RevolverNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943838447161096, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114137986743622244, guid: 74b9baf06d52a4bb7b8582decde68500,
+        type: 3}
+      propertyPath: GameObjectToPool
+      value: 
+      objectReference: {fileID: 1486318089921324, guid: 268da235dc945411dab8c5825088da55,
+        type: 3}
+    - target: {fileID: 114317679573123918, guid: 74b9baf06d52a4bb7b8582decde68500,
+        type: 3}
+      propertyPath: TriggerMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317679573123918, guid: 74b9baf06d52a4bb7b8582decde68500,
+        type: 3}
+      propertyPath: TimeBetweenUses
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114345180357598506, guid: 74b9baf06d52a4bb7b8582decde68500,
+        type: 3}
+      propertyPath: AimControl
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74b9baf06d52a4bb7b8582decde68500, type: 3}
